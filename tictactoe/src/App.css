@@ -1,0 +1,19 @@
+.app-wrapper {
+  display: grid;
+  grid-template-rows: 10vh 10vh 10vh;
+  grid-template-columns: 10vh 10vh 10vh;
+  grid-gap: 3px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.app-wrapper-content {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  font-size: 2em;
+}
