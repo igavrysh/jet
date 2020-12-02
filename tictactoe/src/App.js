@@ -137,7 +137,6 @@ function App() {
           </div>
           <div className='header-wrapper-content'>{gameStateDesc(gameState)}</div>
         </div>
-
       </div>
       <div className='app-wrapper-content'>
         <div className='board-wrapper'>
