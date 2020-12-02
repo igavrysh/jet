@@ -1,8 +1,27 @@
-.app-wrapper {
+.board-wrapper {
   display: grid;
   grid-template-rows: 10vh 10vh 10vh;
   grid-template-columns: 10vh 10vh 10vh;
-  grid-gap: 3px;
+  grid-gap: 0;
+  position: fixed;
+}
+
+.board-wrapper-content {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  border: 1px solid black;
+  font-size: 5vh;
+  background-color: lightblue;
+}
+
+.app-wrapper {
+  display: grid;
+  grid-template-rows: 7vh 30vh;
+  grid-template-columns: 30vh;
+  grid-gap: 0;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -10,11 +29,23 @@
 }
 
 .app-wrapper-content {
-  background-color: lightgray;
   display: flex;
-  justify-content: center;
   align-items: center;
   vertical-align: middle;
-  border: 2px solid black;
-  font-size: 3vh;
+  justify-content: center;
+}
+
+.header-wrapper {
+  display: grid;
+  grid-template-rows: 3vh 3vh;
+  grid-gap: 0px;
+  position: fixed;
+}
+
+.header-wrapper-content {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  font-size: 2vh;
+  justify-content: center;
 }

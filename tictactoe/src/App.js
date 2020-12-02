@@ -7,9 +7,35 @@ function App() {
   const ZEROES_PLAYER_TURN = 'ZEROES_PLAYER_TURN';
   const ZEROS_PLAYER_WON = 'ZEROS_PLAYER_WON';
   const CROSSES_PLAYER_WON = 'CROSSES_PLAYER_WON';
+  const DRAW = 'DRAW';
   const ERROR_STATE = 'ERROR_STATE';
   const CROSS_CHAR = '✖';
   const ZERO_CHAR = 'O';
+
+  const gameStateDesc = (gameState) => {
+    let result = '';
+    switch (gameState) {
+      case CROSSES_PLAYER_TURN:
+        result = 'Crosses player turn';
+        break;
+      case ZEROES_PLAYER_TURN:
+        result = 'Zeros player turn';
+        break;
+      case CROSSES_PLAYER_WON:
+        result = 'Crosses player won';
+        break;
+      case ZEROS_PLAYER_WON:
+        result = 'Zeros player won';
+        break;
+      case DRAW:
+        result = 'Draw';
+        break;
+      case ERROR_STATE:
+        result = 'Error';
+        break;
+    }
+    return result;
+  }
 
   const initialCellsState = [
     '', '', '',
@@ -99,23 +125,32 @@ function App() {
   }
 
   return (
-    <div>
-      <button onClick={startNewGame}>NEW GAME</button>
-      <div>{gameState}</div>
-      <div className='app-wrapper'>
-        {
-          cells.map((elem, idx) => {
-            return (
-              <div
-                onClick={() => onClick(idx)}
-                className='app-wrapper-content'>
-                {elem}
-              </div>
-            );
-          })
-        }
+    <div className='app-wrapper'>
+      <div className='app-wrapper-content'>
+        <div className='header-wrapper'>
+          <div className='header-wrapper-content'>
+            <button onClick={startNewGame}>NEW GAME</button>
+          </div>
+          <div className='header-wrapper-content'>{gameStateDesc(gameState)}</div>
+        </div>
+
       </div>
-    </div>
+      <div className='app-wrapper-content'>
+        <div className='board-wrapper'>
+          {
+            cells.map((elem, idx) => {
+              return (
+                <div
+                  onClick={() => onClick(idx)}
+                  className='board-wrapper-content'>
+                  {elem}
+                </div>
+              );
+            })
+          }
+        </div>
+      </div >
+    </div >
   );
 }
 
