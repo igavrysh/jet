@@ -10,10 +10,11 @@
 }
 
 .app-wrapper-content {
-  background-color: red;
+  background-color: lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
+  vertical-align: middle;
   border: 2px solid black;
-  font-size: 2em;
+  font-size: 3vh;
 }
