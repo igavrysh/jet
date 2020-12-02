@@ -73,10 +73,6 @@ function App() {
       return CROSSES_PLAYER_TURN;
     }
 
-    if (cells.filter(c => c === '').length === 0) {
-      return DRAW;
-    }
-
     for (let i = 0; i < winPatterns.length; i++) {
       let p = winPatterns[i];
       let checkWinner = (winnerChar) => {
@@ -92,6 +88,10 @@ function App() {
       if (checkWinner(ZERO_CHAR)) {
         return ZEROS_PLAYER_WON;
       }
+    }
+
+    if (cells.filter(c => c === '').length === 0) {
+      return DRAW;
     }
 
     if (gameState === CROSSES_PLAYER_TURN) {
